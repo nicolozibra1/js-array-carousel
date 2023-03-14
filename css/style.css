@@ -1,0 +1,42 @@
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider{
+    width: 750px;
+    height: 500px;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+}
+.slide{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.slide img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.slide.active{
+    display: block;
+}
+
+button{
+    color: white;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 50%;
+}
+.next{
+    right: 0;
+}
+button i{
+    font-size: 1.5rem;
+}
