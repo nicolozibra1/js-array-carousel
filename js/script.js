@@ -62,3 +62,17 @@ else{
 }
 document.querySelectorAll('.slide')[currentIndex].classList.add('active');
 }
+
+// THUMBNAIL
+const thumbNail = document.querySelector('.thumbnail');
+let nails = '';
+console.log(thumbNail);
+
+for(let i= 0; i < images.length; i++){
+    nails += `<div class="nail">
+                 <img src="${images[i]}" alt="roma-${i}">
+               </div>`;
+    }
+    console.log(nails);
+
+    thumbNail.innerHTML += nails;
