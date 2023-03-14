@@ -14,6 +14,7 @@ const images = [
 const slider = document.querySelector('.slider');
 console.log(slider)
 let currentIndex = 0;
+let currentSelect = currentIndex + 1;
 let slides = '';
 
 // MAIN-SLIDER
@@ -31,20 +32,26 @@ const next = document.querySelector('.next');
 const prev = document.querySelector('.prev');
 console.log(next, prev);
 
+
 next.addEventListener('click', goNext);
 
 function goNext() {
 document.querySelectorAll('.slide')[currentIndex].classList.remove('active');
+
+
 if(currentIndex === images.length - 1) {
     currentIndex = 0;
+    document.querySelectorAll('.nail')[currentIndex].classList.add('img-current');
 }
- else if(currentIndex > 4) {
+else if(currentIndex > 4) {
     currentIndex = 0;
 }
 else{
     currentIndex++;
+    document.querySelectorAll('.nail')[currentIndex].classList.add('img-current');
 }
 document.querySelectorAll('.slide')[currentIndex].classList.add('active');
+
 }
 
 prev.addEventListener('click', goPrev);
@@ -76,3 +83,4 @@ for(let i= 0; i < images.length; i++){
     console.log(nails);
 
     thumbNail.innerHTML += nails;
+    
