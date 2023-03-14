@@ -19,6 +19,7 @@ let slides = '';
 
 // MAIN-SLIDER
 for(let i= 0; i < images.length; i++){
+    
 slides += `<div class="slide">
              <img src="${images[i]}" alt="roma-${i}">
            </div>`;
@@ -37,11 +38,11 @@ next.addEventListener('click', goNext);
 
 function goNext() {
 document.querySelectorAll('.slide')[currentIndex].classList.remove('active');
+document.querySelectorAll('.nail')[currentIndex].classList.remove('img-current'); 
 
 
 if(currentIndex === images.length - 1) {
     currentIndex = 0;
-    document.querySelectorAll('.nail')[currentIndex].classList.add('img-current');
 }
 else if(currentIndex > 4) {
     currentIndex = 0;
@@ -58,6 +59,7 @@ prev.addEventListener('click', goPrev);
 
 function goPrev() {
 document.querySelectorAll('.slide')[currentIndex].classList.remove('active');
+document.querySelectorAll('.nail')[currentIndex].classList.remove('img-current'); 
 if(currentIndex === 0) {
     currentIndex = images.length - 1;
 }
@@ -66,6 +68,7 @@ else if(currentIndex > 4) {
 }
 else{
     currentIndex--;
+    document.querySelectorAll('.nail')[currentIndex].classList.add('img-current');
 }
 document.querySelectorAll('.slide')[currentIndex].classList.add('active');
 }
@@ -76,7 +79,11 @@ let nails = '';
 console.log(thumbNail);
 
 for(let i= 0; i < images.length; i++){
-    nails += `<div class="nail">
+    let classNail = "nail"; 
+    if(i === 0){
+        classNail += " img-current";
+    }
+    nails += `<div class="${classNail}">
                  <img src="${images[i]}" alt="roma-${i}">
                </div>`;
     }
