@@ -62,3 +62,10 @@ button i{
     height: calc(100% / 5);
     object-fit: cover;
 }
+
+.img-current{
+    border: 5px solid red;
+}
+.img-opacity{
+    opacity: 40%;
+}
