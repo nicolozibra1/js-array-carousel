@@ -6,6 +6,7 @@
     align-items: center;
 }
 
+/* SLIDER */
 .slider{
     width: 750px;
     height: 500px;
@@ -44,4 +45,20 @@ button{
 }
 button i{
     font-size: 1.5rem;
+}
+
+/* THUMBNAIL */
+.thumbnail{
+    width: 150px;
+    height: 500px;
+    background-color: black;
+}
+.nail{
+    width: 100%;
+    height: 100%;
+}
+.nail img{
+    width: 100%;
+    height: calc(100% / 5);
+    object-fit: cover;
 }
