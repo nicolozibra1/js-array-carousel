@@ -19,7 +19,6 @@ let slides = '';
 
 // MAIN-SLIDER
 for(let i= 0; i < images.length; i++){
-    
 slides += `<div class="slide">
              <img src="${images[i]}" alt="roma-${i}">
            </div>`;
@@ -38,37 +37,40 @@ next.addEventListener('click', goNext);
 
 function goNext() {
 document.querySelectorAll('.slide')[currentIndex].classList.remove('active');
-document.querySelectorAll('.nail')[currentIndex].classList.remove('img-current'); 
+document.querySelectorAll('.nail')[currentIndex].classList.toggle('img-current'); 
 
 
 if(currentIndex === images.length - 1) {
     currentIndex = 0;
+    document.querySelectorAll('.nail')[currentIndex].classList.toggle('img-current');
 }
 else if(currentIndex > 4) {
     currentIndex = 0;
 }
 else{
     currentIndex++;
-    document.querySelectorAll('.nail')[currentIndex].classList.add('img-current');
+    document.querySelectorAll('.nail')[currentIndex].classList.toggle('img-current');
 }
 document.querySelectorAll('.slide')[currentIndex].classList.add('active');
 
+console.log(currentIndex)[i];
 }
 
 prev.addEventListener('click', goPrev);
 
 function goPrev() {
 document.querySelectorAll('.slide')[currentIndex].classList.remove('active');
-document.querySelectorAll('.nail')[currentIndex].classList.remove('img-current'); 
+document.querySelectorAll('.nail')[currentIndex].classList.toggle('img-current'); 
 if(currentIndex === 0) {
     currentIndex = images.length - 1;
+    document.querySelectorAll('.nail')[currentIndex].classList.toggle('img-current'); 
 }
 else if(currentIndex > 4) {
     currentIndex = 0;
 }
 else{
     currentIndex--;
-    document.querySelectorAll('.nail')[currentIndex].classList.add('img-current');
+    document.querySelectorAll('.nail')[currentIndex].classList.toggle('img-current');
 }
 document.querySelectorAll('.slide')[currentIndex].classList.add('active');
 }
